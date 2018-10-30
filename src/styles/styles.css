@@ -1,0 +1,54 @@
+body {
+  background: black;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  display: inline-block;
+  font-weight: bold;
+}
+
+html, body {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.app {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.map {
+  margin: 10% auto;
+  z-index: 1;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.tile {
+  margin: 0 auto;
+  color: white;
+  width: 20px;
+  height: 10px;
+  font-size: 5px;
+  padding: 0;
+  display: inline-block;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.background {
+  color: black;
+}
+
+.player {
+  color: red;
+  font-size: 10px;
+
+}
+
+.empty {
+  color: white;
+}

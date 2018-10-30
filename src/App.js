@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/styles.css';
+import { map, player } from './helpers/variables';
+import Map from './components/Map'
 
 class App extends Component {
+
+  state = {
+    matrix: []
+  }
+
+  handleNewGame = () => {
+    map.generateMapMatrix()
+    map.matrix[player.pos[1]].splice(player.pos[0], 1, 'x')
+    this.setState(() => ({ matrix: map.matrix }))
+  }
+
+  handleUpdateMatrix = (newMatrix) => {
+    this.setState(() => ({ matrix: newMatrix }))
+  }
+
+  componentDidMount() {
+    this.handleNewGame()
+  }
+  
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Map 
+          matrix={this.state.matrix}
+          updateMatrix={this.handleUpdateMatrix}
+        />
       </div>
     );
   }
