@@ -1,3 +1,5 @@
+import uuid from 'uuid';
+
 export let canMove = {
   left: true,
   right: true,
@@ -13,15 +15,14 @@ export const  player = {
   moveUp: '',
   moveDown: '',
   size: 10,
-  speed: 1, // larger is slower, 10 is the fastest.
+  speed: 60, // larger is slower, 10 is the fastest.
   stride: 1 // how far the player moves with each move input. Also affects the movement speed.
 }
 
 export const map = {
   height: player.size * 40,
   width: player.size * 80,
-  matrixX: 1,
-  matrixY: 1,
+  keys: [],
   matrix: [],
   generateMapMatrix: () => {
     let X = [];
@@ -32,5 +33,15 @@ export const map = {
       map.matrix.push(X);
       X = [];
     }
-  }
+  },
+  generateKeys: () => {
+      let keys = [];
+      for (let y = 0; y < 20; y++) {
+        for (let x = 0; x < 40; x++) {
+          keys.push(uuid());
+        }
+        map.keys.push(keys);
+        keys = [];
+      }
+    }
 }

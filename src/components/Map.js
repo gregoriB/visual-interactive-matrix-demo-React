@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { map } from '../helpers/variables';
 import Player from './Player';
 import Tile from './Tile';
-import uuid from 'uuid';
 
 class Map extends Component {
 
@@ -16,7 +15,7 @@ class Map extends Component {
             mapIndex={mapIndex}
             index={index}
             matrix={map.matrix}
-            key={uuid()}
+            key={map.keys[mapIndex][index]}
             value={tile}
             x={map.matrix[mapIndex]}
           />
@@ -31,22 +30,22 @@ class Map extends Component {
   
   render() {
 
-  return (
-    <div
-        className='map'
-        style={{
-          height: map.height,
-          width: map.width
-        }}
-    >
-      <Player
-        updateMatrix={this.props.updateMatrix}
-        matrix={this.props.matrix}
-        />
-      <div className='container' >{this.tiles}</div>
-    </div>
-  )
-}
+    return (
+      <div
+          className='map'
+          style={{
+            height: map.height,
+            width: map.width
+          }}
+      >
+        <Player
+          updateMatrix={this.props.updateMatrix}
+          matrix={this.props.matrix}
+          />
+        <div className='container' >{this.tiles}</div>
+      </div>
+    );
+  }
 }
 
 export default Map;
