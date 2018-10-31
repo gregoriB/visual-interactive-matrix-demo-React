@@ -19,6 +19,7 @@ html, body {
 }
 
 .map {
+  background: black;
   margin: 10% auto;
   z-index: 1;
 }
@@ -30,8 +31,8 @@ html, body {
 .tile {
   margin: 0 auto;
   color: white;
-  width: 20px;
-  height: 10px;
+  width: 30px;
+  height: 15px;
   font-size: 5px;
   padding: 0;
   display: inline-block;
@@ -39,12 +40,14 @@ html, body {
   word-break: break-all;
 }
 
-.background {
-  color: black;
+.border {
+  color: rgb(0, 110, 255);
+  font-size: 10px;
+
 }
 
 .player {
-  color: red;
+  color: rgba(233, 47, 47, 0.87);
   font-size: 10px;
 
 }

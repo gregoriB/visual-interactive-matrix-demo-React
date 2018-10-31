@@ -10,7 +10,6 @@ class App extends Component {
   }
 
   handleNewGame = () => {
-    map.generateKeys();
     map.generateMapMatrix()
     map.matrix[player.pos[1]].splice(player.pos[0], 1, 'x')
     this.setState(() => ({ matrix: map.matrix }))

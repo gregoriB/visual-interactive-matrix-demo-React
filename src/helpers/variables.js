@@ -14,34 +14,27 @@ export const  player = {
   moveRight: '',
   moveUp: '',
   moveDown: '',
-  size: 10,
-  speed: 60, // larger is slower, 10 is the fastest.
+  speed: 50, // larger is slower, 10 is the fastest.
   stride: 1 // how far the player moves with each move input. Also affects the movement speed.
 }
 
 export const map = {
-  height: player.size * 40,
-  width: player.size * 80,
+  height: 600,
+  width: 1200,
   keys: [],
   matrix: [],
   generateMapMatrix: () => {
     let X = [];
-    for (let y = 0; y < 20; y++) {
+    let keys = [];
+    for (let y = 0; y < 25; y++) {
       for (let x = 0; x < 40; x++) {
         X.push('.');
+        keys.push(uuid());
       }
       map.matrix.push(X);
+      map.keys.push(keys);
+      keys = [];
       X = [];
     }
-  },
-  generateKeys: () => {
-      let keys = [];
-      for (let y = 0; y < 20; y++) {
-        for (let x = 0; x < 40; x++) {
-          keys.push(uuid());
-        }
-        map.keys.push(keys);
-        keys = [];
-      }
-    }
+  }
 }

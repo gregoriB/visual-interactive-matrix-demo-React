@@ -6,7 +6,7 @@ class Tile extends Component {
   handleTileClassName= () => {
     if (this.props.mapIndex === 0 || this.props.mapIndex === map.matrix.length - 1 ||
         this.props.index === 0 || this.props.index === map.matrix[0].length - 1) {
-      return 'background';
+      return 'border';
     }
     const defaultColor = this.props.value !== 'x' ? 'empty': 'player';
     return defaultColor;
